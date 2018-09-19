@@ -36,13 +36,13 @@ class BooksApp extends React.Component {
       .then((searchResults) => {
         if (Array.isArray(searchResults)) {
           this.setState(() => ({searchResults}));
-          this.addShelfs();
+          this.addshelves();
         }
         else this.setState(() => ({searchResults: []}))
       })
   }
 
-  addShelfs = () => {
+  addshelves = () => {
     let newSearchResults = this.state.searchResults.map((searchBook) => {
       let shelf = "none";
       this.state.books.forEach((book) => {
